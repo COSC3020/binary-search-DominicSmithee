@@ -1,5 +1,7 @@
 # Binary Search
 
+I used GeekForGeeks.org to remember what a binary search function was, as well as how to find the middle element of an array in javascript.
+
 I certify that I have listed all sources used to complete this exercise, including the use
 of any Large Language Models. All of the work is my own, except where stated
 otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
