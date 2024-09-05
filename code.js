@@ -1,7 +1,7 @@
 function binarySearch(list, element) {
     let position = 0;
     if(list.length > 0){  
-        for(i=0;i<list.length;i++){
+        for(i=0;i<list.length-1;i++){
             if(list[i] == element){
                 position = i;
             }
