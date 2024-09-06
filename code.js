@@ -1,36 +1,37 @@
 function binarySearch(list, element){
     if(list.length == 1){
         var mid = list[0];
-    }else{
+    }else if(list.length % 2 == 0){
         var mid = list[list.length/2];
+    }else{
+        var mid = list[Math.floor(list.length/2)];
     }
-    console.log(mid);
-    console.log(list);
-    if(list.length > 0){
-        if(mid == element && list.length == 2){
-                
-                console.log('case 1');
-                //console.log(list);
-                //console.log(binarySearch.count);
-                return list.indexOf(mid);
-              
-        }else if(element < mid){
-                console.log('case 2');
-                return binarySearch(list.slice(0,list.length/2), element);
-        }else if(element > mid){
-                console.log('case 3');
-                return binarySearch(list.slice(list.length/2, list.length), element);
-        }else{
-            return;
-        }
+    count = 0;
+    originalArray = list;
+    while(list.length != 0){
+        count++;
         //console.log(list);
-        return list.indexOf(mid);
-        }else{
-            console.log('case 4');
-            return -1;
-        }
+        if(mid == element || list.length == 1){  
+            //console.log('case 1');
+            return originalArray.indexOf(element);
+        }else if(element < mid){
+            //console.log('case 2');
+            //return binarySearch(list.slice(0,list.length/2), element);
+            list = list.slice(0,list.length/2);
+        }else if(element > mid){
+            //console.log('case 3');
+            //console.log(list.slice(list.length/2,list.length));
+            //return binarySearch(list.slice(list.length/2, list.length), element);
+            //console.log(list.slice(Math.floor(list.length/2), list.length));
+            list = list.slice(Math.floor(list.length/2), list.length);
+    }else{
+        return -1;
+    }
+    }
 }
 
-listy = [7,8,9,10];
-elementy = 10;
-console.log(binarySearch(listy, elementy));
+//listy = [0,1,2,3,4,5,6,7,8,9];
+//console.log('list one: ' +binarySearch(listy, 9));
+
+//listB = [0,1,2,3,4];
+//console.log('list two: ' + binarySearch(listB, 0));
